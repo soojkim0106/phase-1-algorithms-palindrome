@@ -1,31 +1,43 @@
 function isPalindrome(word) {
   // Write your algorithm here
-  if(word === "abba"){
-    return true
+
+  //* set constant of starting letter and last letter
+  let firstLetter = 0;
+  let lastLetter = word.length-1;
+
+  //* check if each letter equals to one another
+  while (firstLetter < lastLetter){
+    if (word[firstLetter] != word[lastLetter]){
+      //* if the words do not match one another, it will return false as it is not a palindrome
+      return false;
+    }
+    //* move along the word char to check
+    firstLetter++;
+    lastLetter--;
   }
-  else if(word === "racecar"){
-    return true
-  }
-  else if(word === "robot"){
-    return false
-  }
-  else if(word === 'ab'){
-    return false
-  }
-  else if(word === 'a'){
-    return true
-  }
-  }
+  //* if the two letter match one another, return true
+  return true;
+}
 
 /* 
   Add your pseudocode here
-    initialize if word we are looking is true or false
+    initialize by putting two constants that holds two different char of letter
 
-    if word is equal to word we are looking for, return true or false
+    iterate over each char in the input word
+      if first letter is not equal to last letter
+        return result of false
+      
+      move along the char of the word
+    if first letter is equal to last letter
+      return result of true
 */
 
 /*
   Add written explanation of your solution here
+  Since we want to find if both letter grabbed from opposite side of the word character matches, we must
+  go through the entire char of the word. If all letters match as we go throughout the chars, return true.
+  If it does not equal, return false.
+  
 */
 
 // You can run `node index.js` to view these console logs
